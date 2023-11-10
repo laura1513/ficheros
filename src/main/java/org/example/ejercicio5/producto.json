@@ -1,0 +1,20 @@
+[
+  {
+    "Nombre":"Tele",
+    "Modelo":"modelo1",
+    "Precio": 120,
+    "Valoracion": 2.5
+  },
+  {
+    "Nombre":"Tele2",
+    "Modelo":"Modelo2",
+    "Precio": 150,
+    "Valoracion": 5
+  },
+  {
+    "Nombre":"Tele3",
+    "Modelo":"Modelo3",
+    "Precio": 520,
+    "Valoracion": 5
+  }
+]
