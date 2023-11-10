@@ -1,0 +1,76 @@
+{
+  "contenedores": [
+    {
+      "tipo": "Grande",
+      "envases": [
+        {
+          "tipo": "Grande ancho",
+          "liquidos": [
+            {"tipo": "alimento", "text": "Agua"},
+            {"tipo": "alimento", "text": "Leche"},
+            {"tipo": "alimento", "text": "Aceite"},
+            {"tipo": "alimento", "text": "Vinagre"}
+          ]
+        },
+        {
+          "tipo": "Grande alto",
+          "liquidos": [
+            {"tipo": "alimento", "text": "Agua"},
+            {"tipo": "alimento", "text": "Leche"},
+            {"tipo": "alimento", "text": "Aceite"},
+            {"tipo": "alimento", "text": "Vinagre"}
+          ]
+        }
+      ]
+    }, {
+      "tipo": "Mediano",
+      "envases": [{
+          "tipo": "Mediano ancho",
+          "liquidos": [
+            {"tipo": "alimento", "text": "Agua"},
+            {"tipo": "alimento", "text": "Leche"},
+            {"tipo": "alimento", "text": "Aceite"},
+            {"tipo": "alimento", "text": "Vinagre"}]
+        }, {
+          "tipo": "Mediano alto",
+          "liquidos": [
+            {"tipo": "corrosivo", "text": "Lejia"},
+            {"tipo": "corrosivo", "text": "Amoniaco"},
+            {"tipo": "corrosivo", "text": "Jabon"},
+            {"tipo": "corrosivo", "text": "Aguarras"},
+            {"tipo": "corrosivo", "text": "Gasolina"},
+            {"tipo": "corrosivo", "text": "Alcohol"}]
+        }, {
+          "tipo": "Pequeño",
+          "liquidos": [
+            {"tipo": "corrosivo", "text": "Lejia"},
+            {"tipo": "corrosivo", "text": "Amoniaco"},
+            {"tipo": "corrosivo", "text": "Jabon"},
+            {"tipo": "corrosivo", "text": "Aguarras"},
+            {"tipo": "corrosivo", "text": "Gasolina"},
+            {"tipo": "corrosivo", "text": "Alcohol"}]
+        }]
+    }, {
+      "tipo" : "Vericales",
+      "envases" : [{
+        "tipo" : "Grande alto",
+        "liquidos" : [
+          {"tipo" :  "alimento", "text": "Agua"},
+          {"tipo" :  "alimento", "text": "Leche"},
+          {"tipo" :  "alimento", "text": "Aceite"},
+          {"tipo" :  "alimento", "text": "Vinagre"}
+        ]
+      },{
+        "tipo": "Grande ancho",
+        "liquidos" : [
+          {"tipo" :  "corrosivo", "text": "Lejia"},
+          {"tipo" :  "corrosivo", "text": "Amoniaco"},
+          {"tipo" :  "corrosivo", "text": "Jabon"},
+          {"tipo" :  "corrosivo", "text": "Aguarras"},
+          {"tipo" :  "corrosivo", "text": "Gasolina"},
+          {"tipo" :  "corrosivo", "text": "Alcohol"}
+        ]
+      }]
+    }
+  ]
+}
