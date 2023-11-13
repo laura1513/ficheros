@@ -2,7 +2,6 @@ package org.example.ejercicio2;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.ejercicio1.DeportistaFemenina;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
