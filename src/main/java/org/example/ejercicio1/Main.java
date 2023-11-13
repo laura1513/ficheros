@@ -19,7 +19,7 @@ public class Main {
         List<DeportistaFemenina> deportista = List.of(carolina, simone);
 
         try {
-            DeportistaFemenina.escribirListaObjetosJson(deportista, path);
+            DeportistaFemenina.escribirDeportistas(deportista, path);
             ArrayList<DeportistaFemenina> d = JSON_MAPPER.readValue(path.toFile(), new TypeReference<>(){});
             d.forEach(System.out::println);
         } catch (Exception e) {

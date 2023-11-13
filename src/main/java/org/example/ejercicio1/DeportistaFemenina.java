@@ -20,7 +20,7 @@ public class DeportistaFemenina {
     private String deporte;
     private int edad;
     private String pais;
-    public static void escribirListaObjetosJson(List<DeportistaFemenina> deportistaFemeninas, Path ruta) {
+    public static void escribirDeportistas(List<DeportistaFemenina> deportistaFemeninas, Path ruta) {
         try {
             Files.deleteIfExists(ruta);
             ObjectMapper objectMapper = new ObjectMapper();
