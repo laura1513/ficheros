@@ -1,0 +1,11 @@
+[ {
+  "titulo" : "Harry Potter y la piedra filosofal",
+  "autor" : "J. K. Rowling",
+  "anyoPublicacion" : 1997,
+  "isbn" : 12
+}, {
+  "titulo" : "Los Juegos del Hambre",
+  "autor" : "Suzanne Collins",
+  "anyoPublicacion" : 2008,
+  "isbn" : 80
+} ]
