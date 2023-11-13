@@ -1,0 +1,11 @@
+[ {
+  "nombre" : "Carolina",
+  "deporte" : "Badminton",
+  "edad" : 30,
+  "pais" : "España"
+}, {
+  "nombre" : "Simone",
+  "deporte" : "Gimnasia",
+  "edad" : 26,
+  "pais" : "Estados Unidos"
+} ]
