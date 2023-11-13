@@ -12,10 +12,13 @@ public class ObjectMapperEj {
     public static final ObjectMapper JSON_MAPPER = new ObjectMapper();
     public static void main(String[] args) {
         try {
-            Path ficheropersona = Path.of("src", "main", "java", "org", "example","ejercicio5", "persona.json");
+            Path ficheropersona = Path.of("src", "main", "java", "org", "example", "ejercicio5", "persona.json");
             ArrayList<Persona> personas = JSON_MAPPER.readValue(ficheropersona.toFile(), new TypeReference<>(){});
             personas.forEach(System.out::println);
 
+            Path ficheroproducto = Path.of("src", "main", "java", "org", "example", "ejercicio5", "producto.json");
+            ArrayList<Producto> productos = JSON_MAPPER.readValue(ficheroproducto.toFile(), new TypeReference<>(){});
+            productos.forEach(System.out::println);
         } catch (IOException ex) {
 
         }
