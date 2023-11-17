@@ -21,6 +21,8 @@ public class Main {
             Libro.escribirLibros(libros, path);
             ArrayList<Libro> l = JSON_MAPPER.readValue(path.toFile(), new TypeReference<>(){});
             l.forEach(System.out::println);
+
+            Libro.buscarLibros(libros);
         } catch (Exception e) {
 
         }
