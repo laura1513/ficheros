@@ -4,9 +4,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
     public final static String COMMA_DELIMITER = ",";
@@ -57,6 +59,15 @@ public class Main {
             System.out.println("Funkos scados en 2023:");
             List<Funko> funko2023 = lista.stream().filter(f -> f.getFecha_lanzamiento().getYear() == 2023).toList();
             for (Funko f: funko2023) {
+                System.out.println(f);
+            }
+
+            System.out.println();
+
+            System.out.println("BACKUP:");
+            Funko.backup(lista, "backup.dat");
+            List<Funko> backupFunko = Funko.restore("backup.dat");
+            for (Funko f : backupFunko) {
                 System.out.println(f);
             }
 
