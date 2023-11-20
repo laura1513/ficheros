@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
@@ -27,14 +28,42 @@ public class Main {
                 funko.setPrecio(Double.parseDouble(funk[3]));
                 funko.setFecha_lanzamiento(LocalDate.parse(funk[4]));
                 lista.add(funko);
-                System.out.println(lista);
             }
             System.out.println();
 
-            System.out.print("Funko más caro: ");
+            System.out.print("El funko más caro es ");
             String nom = lista.stream().max(Comparator.comparingDouble(Funko::getPrecio)).get().getNombre();
-            Double pre = lista.stream().max(Comparator.comparingDouble(Funko::getPrecio)).get().getPrecio();
-            System.out.println("El funko más caro es " + nom + " y cuesta " + pre + "€");
+            double pre = lista.stream().max(Comparator.comparingDouble(Funko::getPrecio)).get().getPrecio();
+            System.out.println(nom + " y cuesta " + pre + "€");
+
+            System.out.println();
+
+            System.out.print("Media de precio: ");
+            double media = lista.stream().mapToDouble(Funko::getPrecio).average().getAsDouble();
+            System.out.println(media + "€");
+
+            System.out.println();
+
+            System.out.println("Funkos por modelo:");
+            Map<String, List<Funko>> porModelo = lista.stream().collect(Collectors.groupingBy(Funko::getModelo));
+            for (Map.Entry<String, List<Funko>> p : porModelo.entrySet()) {
+                System.out.println(p);
+            }
+
+            System.out.println();
+
+            System.out.println("Funkos por modelo:");
+            Map<String, Long> numPorModelo = lista.stream().collect(Collectors.groupingBy(Funko::getModelo, Collectors.counting()));
+            System.out.println(numPorModelo);
+
+            System.out.println();
+
+            System.out.println("Funkos scados en 2023:");
+            List<Funko> funko2023 = lista.stream().filter(f -> f.getFecha_lanzamiento().getYear() == 2023).toList();
+            for (Funko f: funko2023) {
+                System.out.println(f);
+            }
+
         } catch (FileNotFoundException e) {
             System.out.println("Fichero no encontrado");
         } catch (IOException e) {
