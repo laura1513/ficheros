@@ -18,7 +18,6 @@ public class Main {
         Path fichero =  Path.of("src/main/java/org/example/ejercicio1csv/funkos.csv");
         try {
             List<String> linea = Files.readAllLines(fichero);
-            System.out.println("Todos los funkos:");
             for (int i = 1; i < linea.size(); i++) {
                 Funko funko = new Funko();
                 funk = linea.get(i).split(COMMA_DELIMITER);
@@ -29,7 +28,6 @@ public class Main {
                 funko.setFecha_lanzamiento(LocalDate.parse(funk[4]));
                 lista.add(funko);
             }
-            System.out.println();
 
             System.out.print("El funko más caro es ");
             String nom = lista.stream().max(Comparator.comparingDouble(Funko::getPrecio)).get().getNombre();
