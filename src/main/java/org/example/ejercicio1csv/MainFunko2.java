@@ -8,10 +8,9 @@ import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class MainFunko {
+public class MainFunko2 {
     public final static String COMMA_DELIMITER = ",";
     public static void main(String[] args) throws IOException {
-        FunkoCollection funkoCollection = new FunkoCollection();
         String[] funk;
         List<Funko> lista = new ArrayList<Funko>();
         Path fichero =  Path.of("src/main/java/org/example/ejercicio1csv/funkos.csv");
@@ -29,31 +28,57 @@ public class MainFunko {
             }
 
             System.out.print("El funko más caro es ");
-            funkoCollection.funkoMasCaro(lista);
+            funkoMasCaro(lista);
 
             System.out.print("Media de precio: ");
-            System.out.println(funkoCollection.mediaDePrecios(lista) + "€");
+            System.out.println(mediaDePrecios(lista) + "€");
 
             System.out.println("Funkos por modelo:");
-            for (Map.Entry<String, List<Funko>> p : funkoCollection.listaPorModelo(lista).entrySet()) {
+            for (Map.Entry<String, List<Funko>> p : listaPorModelo(lista).entrySet()) {
                 System.out.println(p);
             }
 
             System.out.println("Funkos por modelo:");
-            System.out.println(funkoCollection.numPorModelo(lista));
+            System.out.println(numPorModelo(lista));
 
             System.out.println("Funkos scados en 2023:");
-            for (Funko f: funkoCollection.funkosSacadosEn2023(lista)) {
+            for (Funko f: funkosSacadosEn2023(lista)) {
                 System.out.println(f);
             }
 
             System.out.println("BACKUP:");
-            funkoCollection.backupFunko(lista);
+            backupFunko(lista);
 
         } catch (FileNotFoundException e) {
             System.out.println("Fichero no encontrado");
         } catch (IOException e) {
             System.out.println("Error");
+        }
+    }
+
+    public static void funkoMasCaro(List<Funko> lista) {
+        String nom = lista.stream().max(Comparator.comparingDouble(Funko::getPrecio)).get().getNombre();
+        double pre = lista.stream().max(Comparator.comparingDouble(Funko::getPrecio)).get().getPrecio();
+        System.out.println(nom + " y cuesta " + pre + "€");
+    }
+    public static double mediaDePrecios(List<Funko> lista) {
+        return lista.stream().mapToDouble(Funko::getPrecio).average().getAsDouble();
+    }
+    public static Map<String, List<Funko>> listaPorModelo(List<Funko> lista) {
+        return (lista.stream().collect(Collectors.groupingBy(Funko::getModelo)));
+    }
+
+    public static Map<String, Long> numPorModelo(List<Funko> lista) {
+        return (lista.stream().collect(Collectors.groupingBy(Funko::getModelo, Collectors.counting())));
+    }
+    public static List<Funko> funkosSacadosEn2023(List<Funko> lista) {
+        return (lista.stream().filter(f -> f.getFecha_lanzamiento().getYear() == 2023).toList());
+    }
+    public static void backupFunko(List<Funko> lista) {
+        Funko.backup(lista, "backup.dat");
+        List<Funko> backupFunko = Funko.restore("backup.dat");
+        for (Funko f : backupFunko) {
+            System.out.println(f);
         }
     }
 }
