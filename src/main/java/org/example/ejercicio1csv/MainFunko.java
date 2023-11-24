@@ -28,8 +28,8 @@ public class MainFunko {
                 lista.add(funko);
             }
 
-            System.out.print("El funko más caro es ");
-            funkoCollection.funkoMasCaro(lista);
+            System.out.println("El funko más caro es " + funkoCollection.funkoMasCaro(lista));
+
 
             System.out.print("Media de precio: ");
             System.out.println(funkoCollection.mediaDePrecios(lista) + "€");
@@ -39,7 +39,7 @@ public class MainFunko {
                 System.out.println(p);
             }
 
-            System.out.println("Funkos por modelo:");
+            System.out.println("Numero de funkos por modelo:");
             System.out.println(funkoCollection.numPorModelo(lista));
 
             System.out.println("Funkos scados en 2023:");
