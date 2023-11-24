@@ -1,0 +1,22 @@
+<ListaPruebas>
+  <atleta>
+    <atleta nombre="Maria">
+      <edad>21</edad>
+      <pais>España</pais>
+      <pruebas>
+        <prueba>100 metros</prueba>
+        <prueba>Salto de altura</prueba>
+        <prueba>Salto con pertiga</prueba>
+      </pruebas>
+    </atleta>
+    <atleta nombre="Lucia">
+      <edad>30</edad>
+      <pais>Francia</pais>
+      <pruebas>
+        <prueba>100 metros</prueba>
+        <prueba>Carrer de relevos</prueba>
+        <prueba>Salto de longitud</prueba>
+      </pruebas>
+    </atleta>
+  </atleta>
+</ListaPruebas>
