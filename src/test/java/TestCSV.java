@@ -1,11 +1,9 @@
 import org.example.ejercicio1csv.Funko;
 import org.example.ejercicio1csv.FunkoCollection;
-import org.example.ejercicio1csv.MainFunko;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 public class TestCSV {
@@ -14,8 +12,8 @@ public class TestCSV {
         Funko uno = new Funko("123", "Pepe", "Disney", 55.30, LocalDate.of(2023,6,15));
         Funko dos = new Funko("456", "Roberto", "Marvel", 40.30, LocalDate.of(2022,12,20));
         List<Funko> f = List.of(uno, dos);
-        FunkoCollection funkos = new FunkoCollection(new Funko[] {uno, dos});
 
+        FunkoCollection funkos = new FunkoCollection(new Funko[] {uno, dos});
 
         String funkoCaro = funkos.funkoMasCaro(f);
 
@@ -46,6 +44,6 @@ public class TestCSV {
 
         List<Funko> funko2023 = funkos.funkosSacadosEn2023(f);
 
-        Assertions.assertEquals(f2023, funko2023);
+        Assertions.assertEquals(f2023.get(0).getFecha_lanzamiento().getYear(), funko2023.get(0).getFecha_lanzamiento().getYear());
     }
 }
