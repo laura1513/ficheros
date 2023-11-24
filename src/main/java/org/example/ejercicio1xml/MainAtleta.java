@@ -2,13 +2,10 @@ package org.example.ejercicio1xml;
 
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import org.example.FicherosDeIntercambio.Entities.ListaLenguajes;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainAtleta {
@@ -20,7 +17,9 @@ public class MainAtleta {
         List<AtletaFemenina> lista = List.of(a, b);
 
         ListaPruebas listaPruebas = new ListaPruebas(lista);
+
         escribirAtleta(listaPruebas, fichero);
+        System.out.println(escribirListaObjetosXml(listaPruebas));
     }
     public static void escribirAtleta(ListaPruebas pruebas, Path ruta) {
 
@@ -31,6 +30,15 @@ public class MainAtleta {
             xmlMapper.writeValue(ruta.toFile(), pruebas);
         } catch (IOException e) {
             System.out.println("El fichero no existe");
+        }
+    }
+    public static String escribirListaObjetosXml(ListaPruebas atleta) {
+        try {
+            XmlMapper xmlMapper = new XmlMapper();
+            xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
+            return xmlMapper.writeValueAsString(atleta);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
