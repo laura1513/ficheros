@@ -79,7 +79,6 @@ public class MainJSON {
         read.nextLine();
 
         BookJSON newBook = new BookJSON(isbn, titulo, autor, paginas, anyo);
-        System.out.println(newBook.getTitulo());
         lista.add(newBook);
         escribirListaObjetosJson(lista, fichero);
         System.out.println("Libro añadido correctamente");
@@ -103,9 +102,9 @@ public class MainJSON {
     }
 
     private static void todosLosLibros() {
-    System.out.println("Lista de todos los libros:");
-    for (BookJSON l : lista) {
-        System.out.println(l.toString());
-    }
+        System.out.println("Lista de todos los libros:");
+        for (BookJSON l : lista) {
+            System.out.println(l.toString());
+        }
     }
 }
