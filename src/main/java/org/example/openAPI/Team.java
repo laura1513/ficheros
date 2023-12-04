@@ -16,6 +16,5 @@ public class Team {
     public String conference;
     public String division;
     public String full_name;
-
     public String name;
 }
