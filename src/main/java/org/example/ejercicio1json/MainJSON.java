@@ -91,7 +91,7 @@ public class MainJSON {
         System.out.print("Introduce que quieres buscar: ");
         busqueda = read.nextLine().toLowerCase();
 
-        lista.stream().filter(l -> l.getTitulo().toLowerCase().contains(busqueda) || l.getAutor().toLowerCase().contains(busqueda)).forEach(l->{
+        lista.stream().filter(l -> l.getTitulo().toLowerCase().equals(busqueda)|| l.getAutor().toLowerCase().equals(busqueda)).forEach(l->{
             System.out.println(l.toString());
             ok = true;
         });
